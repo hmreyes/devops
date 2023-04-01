@@ -1,0 +1,31 @@
+#!/bin/bash
+
+#---------------------------------------------------------------------------------------------------#
+#-->  Este es un script para instalar en Ubuntu las aplicaciones que utilizaremos para trabajar  <--#
+#---------------------------------------------------------------------------------------------------#
+
+echo "************************************************************************"
+echo "** Se comienza con la actualizacion e instalacion de las aplicaciones **"
+echo "************************************************************************"
+
+# Comprueba actualizaciones disponibles e instala paquetes que pueden ser actualizados.
+# El parametro -y sirve para saltarte el aviso de confirmacion.
+sudo apt update && sudo apt upgrade -y
+
+# Este paquete incluye las herramientas importantes para controlar el subsistema de red del kernel de Linux.
+# Esto incluye arp, ifconfig, netstat, rarp, nameif y route. 
+sudo apt-get install -y net-tools
+
+# Instalar kubectl: Herramienta de configuracion de la linea de comandos de Kubernetes.
+sudo snap install kubectl --classic
+
+# Instalar jq: Herramienta que permite filtrar, extraer, buscar o modificar los datos dentro de un fichero JSON.
+sudo apt-get install jq -y
+
+# Eliminar paquetes no necesarios y limpiar ficheros
+sudo apt -y autoremove
+sudo apt autoclean
+
+echo "*************************************************************"
+echo "** Finalizo la ejecucion del script install-apps-ubuntu.sh **"
+echo "*************************************************************"
