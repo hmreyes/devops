@@ -26,6 +26,11 @@ sudo apt-get install jq -y
 sudo apt -y autoremove
 sudo apt autoclean
 
+# Verificar versiones
+echo "Git version: $(git --version)"
+echo "Kubernetes version: $(kubectl version --client)"
+echo "JQ version: $(jq --version)"
+echo " "
 echo "*************************************************************"
 echo "** Finalizo la ejecucion del script install-apps-ubuntu.sh **"
 echo "*************************************************************"
